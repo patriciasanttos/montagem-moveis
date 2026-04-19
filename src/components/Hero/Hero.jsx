@@ -22,7 +22,7 @@ function Hero() {
             Faça Seu Orçamento
             <HiArrowRight />
           </a>
-          <a href="#como-funciona" className="hero__btn hero__btn--outline" id="hero-cta-visita">
+          <a href="#orcamento" className="hero__btn hero__btn--outline" id="hero-cta-visita">
             Solicitar Visita
           </a>
         </div>
