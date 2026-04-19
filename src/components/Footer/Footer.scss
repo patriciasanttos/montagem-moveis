@@ -1,0 +1,104 @@
+@use '../../index.scss' as *;
+
+.footer {
+  background: $gray-900;
+  color: $gray-300;
+  padding: 60px 0 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: $yellow-400;
+    border-radius: $radius-sm;
+    color: $white;
+    font-size: 1.1rem;
+  }
+
+  &__logo-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $white;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $gray-400;
+  }
+
+  &__heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: $gray-400;
+
+      svg {
+        color: $yellow-400;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      a {
+        color: $gray-400;
+        transition: $transition-base;
+
+        &:hover {
+          color: $yellow-400;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $gray-700;
+    padding: 20px 0;
+    text-align: center;
+
+    p {
+      font-size: 0.85rem;
+      color: $gray-500;
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+  .footer {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+}

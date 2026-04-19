@@ -1,0 +1,160 @@
+@use '../../index.scss' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: $transition-base;
+  border-bottom: 1px solid transparent;
+
+  &--scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    border-bottom-color: $gray-200;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $gray-900;
+    z-index: 1001;
+  }
+
+  &__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: $yellow-400;
+    border-radius: $radius-sm;
+    color: $white;
+    font-size: 1.25rem;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $gray-700;
+    transition: $transition-base;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $yellow-400;
+      transition: $transition-base;
+    }
+
+    &:hover {
+      color: $yellow-500;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    background: $yellow-400;
+    color: $gray-900;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: $radius-sm;
+    transition: $transition-base;
+
+    &:hover {
+      background: $yellow-500;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__cta-mobile {
+    display: none;
+  }
+
+  &__hamburger {
+    display: none;
+    background: none;
+    font-size: 1.5rem;
+    color: $gray-900;
+    z-index: 1001;
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: $white;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &--open {
+        transform: translateX(0);
+      }
+    }
+
+    &__link {
+      font-size: 1.25rem;
+    }
+
+    &__cta {
+      display: none;
+    }
+
+    &__cta-mobile {
+      display: inline-flex;
+      padding: 14px 32px;
+      background: $yellow-400;
+      color: $gray-900;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: $radius-sm;
+      transition: $transition-base;
+      margin-top: 8px;
+    }
+
+    &__hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

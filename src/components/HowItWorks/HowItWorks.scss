@@ -1,0 +1,60 @@
+@use '../../index.scss' as *;
+
+.how-it-works {
+  background: $white;
+
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  &__step {
+    text-align: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: $yellow-400;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    font-size: 1.75rem;
+    color: $gray-900;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: $gray-500;
+    line-height: 1.5;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 1024px) {
+  .how-it-works__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .how-it-works__steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
