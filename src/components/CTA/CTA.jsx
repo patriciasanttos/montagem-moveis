@@ -1,4 +1,5 @@
-import { HiArrowRight, HiPhone } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
+import { RiWhatsappLine } from 'react-icons/ri';
 import './CTA.scss';
 
 function CTA() {
@@ -20,10 +21,10 @@ function CTA() {
             id="cta-telefone"
             onClick={(e) => {
               e.preventDefault();
-              alert('📱 Este botão irá enviar uma mensagem via WhatsApp para o número (11) 99999-9999.');
+              alert('📱 Este botão irá enviar uma mensagem via WhatsApp para o número da empresa.');
             }}
           >
-            <HiPhone />
+            <RiWhatsappLine size={22} />
             (11) 99999-9999
           </a>
         </div>

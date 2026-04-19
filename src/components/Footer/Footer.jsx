@@ -1,5 +1,6 @@
 import { PiWrenchFill } from 'react-icons/pi';
-import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiInstagramLine, RiWhatsappLine } from 'react-icons/ri';
 import './Footer.scss';
 
 function Footer() {
@@ -26,11 +27,15 @@ function Footer() {
             <ul className="footer__list">
               <li>
                 <HiOutlineMail />
-                <a href="mailto:contato@montamoveispro.com.br">contato@montamoveispro.com.br</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); alert('📧 Este link irá enviar um e-mail para o email da empresa.'); }}>contato@montamoveispro.com.br</a>
               </li>
               <li>
-                <HiOutlinePhone />
-                <a href="tel:+5511999999999">(11) 99999-9999</a>
+                <RiWhatsappLine />
+                <a href="#" onClick={(e) => { e.preventDefault(); alert('📱 Este link irá enviar uma mensagem via WhatsApp para o número da empresa.'); }}>(11) 99999-9999</a>
+              </li>
+              <li>
+                <RiInstagramLine />
+                <a href="#" onClick={(e) => { e.preventDefault(); alert('📸 Este link irá abrir o Instagram da empresa.'); }}>@montamoveispro</a>
               </li>
             </ul>
           </div>
