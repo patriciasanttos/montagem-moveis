@@ -6,33 +6,72 @@ function QuoteForm() {
     nome: '',
     telefone: '',
     email: '',
-    tipoMovel: '',
+    tiposMovel: [],
     quantidade: '',
     data: '',
     endereco: '',
     detalhes: '',
   });
 
+  const tiposDisponiveis = [
+    { value: 'sala', label: 'Móveis de Sala' },
+    { value: 'quarto', label: 'Móveis de Quarto' },
+    { value: 'escritorio', label: 'Móveis de Escritório' },
+    { value: 'planejados', label: 'Móveis Planejados' },
+    { value: 'outro', label: 'Outro' },
+  ];
+
+  const formatPhone = (value) => {
+    const digits = value.replace(/\D/g, '').slice(0, 11);
+    if (digits.length <= 2) return digits.length ? `(${digits}` : '';
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === 'telefone') {
+      setFormData((prev) => ({ ...prev, telefone: formatPhone(value) }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleCheckbox = (value) => {
+    setFormData((prev) => {
+      const tipos = prev.tiposMovel.includes(value)
+        ? prev.tiposMovel.filter((t) => t !== value)
+        : [...prev.tiposMovel, value];
+      return { ...prev, tiposMovel: tipos };
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Build WhatsApp message
+
+    // Validate required fields
+    if (!formData.nome || !formData.telefone || formData.tiposMovel.length === 0 || !formData.quantidade || !formData.endereco || !formData.detalhes) {
+      alert('⚠️ Por favor, preencha todos os campos obrigatórios antes de enviar.');
+      return;
+    }
+
+    // Format date to Brazilian format
+    const dataFormatada = formData.data
+      ? formData.data.split('-').reverse().join('/')
+      : 'Não informada';
+
+    // Build WhatsApp message preview
     const message = `Olá! Gostaria de solicitar um orçamento:\n\n` +
       `*Nome:* ${formData.nome}\n` +
       `*Telefone:* ${formData.telefone}\n` +
-      `*E-mail:* ${formData.email}\n` +
-      `*Tipo de Móvel:* ${formData.tipoMovel}\n` +
+      `*E-mail:* ${formData.email || 'Não informado'}\n` +
+      `*Tipos de Móvel:* ${formData.tiposMovel.map((v) => tiposDisponiveis.find((t) => t.value === v)?.label).join(', ')}\n` +
       `*Quantidade:* ${formData.quantidade}\n` +
-      `*Data Preferida:* ${formData.data}\n` +
+      `*Data Preferida:* ${dataFormatada}\n` +
       `*Endereço:* ${formData.endereco}\n` +
       `*Detalhes:* ${formData.detalhes}`;
 
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    alert(`📋 Prévia da mensagem que seria enviada via WhatsApp:\n\n${message}`);
   };
 
   return (
@@ -65,6 +104,7 @@ function QuoteForm() {
                   id="telefone"
                   name="telefone"
                   placeholder="(11) 99999-9999"
+                  maxLength={15}
                   value={formData.telefone}
                   onChange={handleChange}
                   required
@@ -84,37 +124,34 @@ function QuoteForm() {
               />
             </div>
 
-            <div className="quote-form__row">
-              <div className="quote-form__field">
-                <label htmlFor="tipoMovel">Tipo de Móvel *</label>
-                <select
-                  id="tipoMovel"
-                  name="tipoMovel"
-                  value={formData.tipoMovel}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="" disabled>Selecione o tipo</option>
-                  <option value="sala">Móveis de Sala</option>
-                  <option value="quarto">Móveis de Quarto</option>
-                  <option value="escritorio">Móveis de Escritório</option>
-                  <option value="planejados">Móveis Planejados</option>
-                  <option value="outro">Outro</option>
-                </select>
+            <div className="quote-form__field">
+              <label>Tipo de Móvel *</label>
+              <div className="quote-form__checkboxes">
+                {tiposDisponiveis.map((tipo) => (
+                  <label key={tipo.value} className="quote-form__checkbox-label">
+                    <input
+                      type="checkbox"
+                      checked={formData.tiposMovel.includes(tipo.value)}
+                      onChange={() => handleCheckbox(tipo.value)}
+                    />
+                    <span>{tipo.label}</span>
+                  </label>
+                ))}
               </div>
-              <div className="quote-form__field">
-                <label htmlFor="quantidade">Quantidade de Peças *</label>
-                <input
-                  type="number"
-                  id="quantidade"
-                  name="quantidade"
-                  placeholder="Ex: 3"
-                  min="1"
-                  value={formData.quantidade}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+            </div>
+
+            <div className="quote-form__field">
+              <label htmlFor="quantidade">Quantidade de Peças *</label>
+              <input
+                type="number"
+                id="quantidade"
+                name="quantidade"
+                placeholder="Ex: 3"
+                min="1"
+                value={formData.quantidade}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="quote-form__field">
@@ -142,14 +179,15 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="detalhes">Detalhes Adicionais</label>
+              <label htmlFor="detalhes">Detalhes Adicionais *</label>
               <textarea
                 id="detalhes"
                 name="detalhes"
-                placeholder="Forneça mais informações sobre a montagem (marca, modelo, observações especiais...)"
+                placeholder="Descreva os móveis que precisam ser montados (marca, modelo, observações especiais...)"
                 rows="4"
                 value={formData.detalhes}
                 onChange={handleChange}
+                required
               />
             </div>
 

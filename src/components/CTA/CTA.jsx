@@ -14,7 +14,15 @@ function CTA() {
             Faça Seu Orçamento Agora
             <HiArrowRight />
           </a>
-          <a href="tel:+5511999999999" className="cta__btn cta__btn--outline" id="cta-telefone">
+          <a
+            href="#"
+            className="cta__btn cta__btn--outline"
+            id="cta-telefone"
+            onClick={(e) => {
+              e.preventDefault();
+              alert('📱 Este botão irá enviar uma mensagem via WhatsApp para o número (11) 99999-9999.');
+            }}
+          >
             <HiPhone />
             (11) 99999-9999
           </a>
