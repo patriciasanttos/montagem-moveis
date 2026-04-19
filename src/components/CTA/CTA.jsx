@@ -1,18 +1,21 @@
 import { HiArrowRight } from 'react-icons/hi';
 import { RiWhatsappLine } from 'react-icons/ri';
+import { useLanguage } from '../../context/LanguageContext';
 import './CTA.scss';
 
 function CTA() {
+  const { t } = useLanguage();
+
   return (
     <section className="cta">
       <div className="container cta__content">
-        <h2 className="cta__title">Pronto para Montar Seus Móveis?</h2>
+        <h2 className="cta__title">{t('cta.title')}</h2>
         <p className="cta__subtitle">
-          Entre em contato agora e receba um orçamento sem compromisso!
+          {t('cta.subtitle')}
         </p>
         <div className="cta__buttons">
           <a href="#orcamento" className="cta__btn cta__btn--dark" id="cta-orcamento">
-            Faça Seu Orçamento Agora
+            {t('cta.ctaPrimary')}
             <HiArrowRight />
           </a>
           <a
@@ -21,7 +24,7 @@ function CTA() {
             id="cta-telefone"
             onClick={(e) => {
               e.preventDefault();
-              alert('📱 Este botão irá enviar uma mensagem via WhatsApp para o número da empresa.');
+              alert(t('cta.whatsappAlert'));
             }}
           >
             <RiWhatsappLine size={22} />

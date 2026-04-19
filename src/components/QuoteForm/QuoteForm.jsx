@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import './QuoteForm.scss';
 
 function QuoteForm() {
+  const { t } = useLanguage();
+  const tiposDisponiveis = t('quoteForm.tipos') || [];
+
   const [formData, setFormData] = useState({
     nome: '',
     telefone: '',
@@ -12,14 +16,6 @@ function QuoteForm() {
     endereco: '',
     detalhes: '',
   });
-
-  const tiposDisponiveis = [
-    { value: 'sala', label: 'Móveis de Sala' },
-    { value: 'quarto', label: 'Móveis de Quarto' },
-    { value: 'escritorio', label: 'Móveis de Escritório' },
-    { value: 'planejados', label: 'Móveis Planejados' },
-    { value: 'outro', label: 'Outro' },
-  ];
 
   const formatPhone = (value) => {
     const digits = value.replace(/\D/g, '').slice(0, 11);
@@ -51,59 +47,59 @@ function QuoteForm() {
 
     // Validate required fields
     if (!formData.nome || !formData.telefone || formData.tiposMovel.length === 0 || !formData.quantidade || !formData.endereco || !formData.detalhes) {
-      alert('⚠️ Por favor, preencha todos os campos obrigatórios antes de enviar.');
+      alert(t('quoteForm.alertRequired'));
       return;
     }
 
     // Format date to Brazilian format
     const dataFormatada = formData.data
       ? formData.data.split('-').reverse().join('/')
-      : 'Não informada';
+      : t('quoteForm.msgNaoInformada');
 
     // Build WhatsApp message preview
-    const message = `Olá! Gostaria de solicitar um orçamento:\n\n` +
-      `*Nome:* ${formData.nome}\n` +
-      `*Telefone:* ${formData.telefone}\n` +
-      `*E-mail:* ${formData.email || 'Não informado'}\n` +
-      `*Tipos de Móvel:* ${formData.tiposMovel.map((v) => tiposDisponiveis.find((t) => t.value === v)?.label).join(', ')}\n` +
-      `*Quantidade:* ${formData.quantidade}\n` +
-      `*Data Preferida:* ${dataFormatada}\n` +
-      `*Endereço:* ${formData.endereco}\n` +
-      `*Detalhes:* ${formData.detalhes}`;
+    const message = `${t('quoteForm.msgGreeting')}\n\n` +
+      `*${t('quoteForm.msgNome')}:* ${formData.nome}\n` +
+      `*${t('quoteForm.msgTelefone')}:* ${formData.telefone}\n` +
+      `*${t('quoteForm.msgEmail')}:* ${formData.email || t('quoteForm.msgNaoInformado')}\n` +
+      `*${t('quoteForm.msgTipoMovel')}:* ${formData.tiposMovel.map((v) => tiposDisponiveis.find((t) => t.value === v)?.label).join(', ')}\n` +
+      `*${t('quoteForm.msgQuantidade')}:* ${formData.quantidade}\n` +
+      `*${t('quoteForm.msgDataPreferida')}:* ${dataFormatada}\n` +
+      `*${t('quoteForm.msgEndereco')}:* ${formData.endereco}\n` +
+      `*${t('quoteForm.msgDetalhes')}:* ${formData.detalhes}`;
 
-    alert(`📋 Prévia da mensagem que seria enviada via WhatsApp:\n\n${message}`);
+    alert(`${t('quoteForm.alertPreview')}\n\n${message}`);
   };
 
   return (
     <section className="quote-form section" id="orcamento">
       <div className="container">
         <div className="quote-form__card">
-          <h2 className="section-title">Faça Seu Orçamento</h2>
+          <h2 className="section-title">{t('quoteForm.sectionTitle')}</h2>
           <p className="section-subtitle">
-            Preencha os dados abaixo e receba um orçamento personalizado
+            {t('quoteForm.sectionSubtitle')}
           </p>
 
           <form className="quote-form__form" onSubmit={handleSubmit} id="form-orcamento">
             <div className="quote-form__row">
               <div className="quote-form__field">
-                <label htmlFor="nome">Nome Completo *</label>
+                <label htmlFor="nome">{t('quoteForm.labelNome')}</label>
                 <input
                   type="text"
                   id="nome"
                   name="nome"
-                  placeholder="Seu nome completo"
+                  placeholder={t('quoteForm.placeholderNome')}
                   value={formData.nome}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="quote-form__field">
-                <label htmlFor="telefone">Telefone/WhatsApp *</label>
+                <label htmlFor="telefone">{t('quoteForm.labelTelefone')}</label>
                 <input
                   type="tel"
                   id="telefone"
                   name="telefone"
-                  placeholder="(11) 99999-9999"
+                  placeholder={t('quoteForm.placeholderTelefone')}
                   maxLength={15}
                   value={formData.telefone}
                   onChange={handleChange}
@@ -113,21 +109,21 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="email">E-mail</label>
+              <label htmlFor="email">{t('quoteForm.labelEmail')}</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="seu@email.com"
+                placeholder={t('quoteForm.placeholderEmail')}
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
 
             <div className="quote-form__field">
-              <label>Tipo de Móvel *</label>
+              <label>{t('quoteForm.labelTipoMovel')}</label>
               <div className="quote-form__checkboxes">
-                {tiposDisponiveis.map((tipo) => (
+                {Array.isArray(tiposDisponiveis) && tiposDisponiveis.map((tipo) => (
                   <label key={tipo.value} className="quote-form__checkbox-label">
                     <input
                       type="checkbox"
@@ -141,12 +137,12 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="quantidade">Quantidade de Peças *</label>
+              <label htmlFor="quantidade">{t('quoteForm.labelQuantidade')}</label>
               <input
                 type="number"
                 id="quantidade"
                 name="quantidade"
-                placeholder="Ex: 3"
+                placeholder={t('quoteForm.placeholderQuantidade')}
                 min="1"
                 value={formData.quantidade}
                 onChange={handleChange}
@@ -155,7 +151,7 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="data">Data Preferida</label>
+              <label htmlFor="data">{t('quoteForm.labelData')}</label>
               <input
                 type="date"
                 id="data"
@@ -166,12 +162,12 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="endereco">Endereço Completo *</label>
+              <label htmlFor="endereco">{t('quoteForm.labelEndereco')}</label>
               <input
                 type="text"
                 id="endereco"
                 name="endereco"
-                placeholder="Rua, número, bairro, cidade"
+                placeholder={t('quoteForm.placeholderEndereco')}
                 value={formData.endereco}
                 onChange={handleChange}
                 required
@@ -179,11 +175,11 @@ function QuoteForm() {
             </div>
 
             <div className="quote-form__field">
-              <label htmlFor="detalhes">Detalhes Adicionais *</label>
+              <label htmlFor="detalhes">{t('quoteForm.labelDetalhes')}</label>
               <textarea
                 id="detalhes"
                 name="detalhes"
-                placeholder="Descreva os móveis que precisam ser montados (marca, modelo, observações especiais...)"
+                placeholder={t('quoteForm.placeholderDetalhes')}
                 rows="4"
                 value={formData.detalhes}
                 onChange={handleChange}
@@ -192,7 +188,7 @@ function QuoteForm() {
             </div>
 
             <button type="submit" className="quote-form__submit" id="btn-submit-orcamento">
-              Solicitar Orçamento Gratuito
+              {t('quoteForm.submitButton')}
             </button>
           </form>
         </div>

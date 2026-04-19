@@ -1,0 +1,105 @@
+{
+  "header": {
+    "servicos": "Servicios",
+    "comoFunciona": "Cómo Funciona",
+    "galeria": "Galería",
+    "orcamento": "Presupuesto",
+    "ctaButton": "Solicitar Presupuesto",
+    "menuLabel": "Abrir menú"
+  },
+  "hero": {
+    "titleLine1": "Montaje de Muebles",
+    "titleLine2": "Profesional",
+    "subtitle": "Especialistas en montaje rápido y seguro. ¡Deje sus muebles listos para usar!",
+    "ctaPrimary": "Solicite su Presupuesto",
+    "ctaSecondary": "Solicitar Visita",
+    "heroAlt": "Sala de estar con muebles montados"
+  },
+  "services": {
+    "sectionTitle": "Nuestros Servicios",
+    "sectionSubtitle": "Montamos todo tipo de muebles con calidad y seguridad",
+    "items": [
+      { "title": "Sala de Estar", "description": "Sofás, librerías, muebles de TV y mesas de centro" },
+      { "title": "Dormitorio", "description": "Camas, armarios, cómodas y mesitas de noche" },
+      { "title": "Oficina", "description": "Escritorios, sillas, armarios y estaciones de trabajo" },
+      { "title": "Muebles a Medida", "description": "Instalación completa de proyectos a medida" },
+      { "title": "Mantenimiento", "description": "Ajustes, reparaciones y refuerzos" },
+      { "title": "Servicio Rápido", "description": "Horarios flexibles y puntualidad garantizada" }
+    ]
+  },
+  "howItWorks": {
+    "sectionTitle": "Cómo Funciona",
+    "sectionSubtitle": "Proceso simple y transparente",
+    "steps": [
+      { "title": "Contáctenos", "description": "Complete el formulario con los detalles del montaje" },
+      { "title": "Programe Visita", "description": "Elija el mejor día y hora para usted" },
+      { "title": "Montaje Profesional", "description": "Nuestro equipo monta sus muebles con cuidado" },
+      { "title": "¡Disfrute!", "description": "Sus muebles listos para uso inmediato" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Nuestro Trabajo",
+    "sectionSubtitle": "Vea algunos de nuestros servicios completados",
+    "images": [
+      "Montaje con taladro profesional",
+      "Montaje de mueble con destornillador",
+      "Armario terminado"
+    ]
+  },
+  "quoteForm": {
+    "sectionTitle": "Solicite su Presupuesto",
+    "sectionSubtitle": "Complete sus datos a continuación para recibir un presupuesto personalizado",
+    "labelNome": "Nombre Completo *",
+    "labelTelefone": "Teléfono/WhatsApp *",
+    "labelEmail": "Correo Electrónico",
+    "labelTipoMovel": "Tipo de Mueble *",
+    "labelQuantidade": "Cantidad de Piezas *",
+    "labelData": "Fecha Preferida",
+    "labelEndereco": "Dirección Completa *",
+    "labelDetalhes": "Detalles Adicionales *",
+    "placeholderNome": "Su nombre completo",
+    "placeholderTelefone": "(11) 99999-9999",
+    "placeholderEmail": "su@email.com",
+    "placeholderQuantidade": "Ej: 3",
+    "placeholderEndereco": "Calle, número, barrio, ciudad",
+    "placeholderDetalhes": "Describa los muebles que necesitan montaje (marca, modelo, notas especiales...)",
+    "tipos": [
+      { "value": "sala", "label": "Sala de Estar" },
+      { "value": "quarto", "label": "Dormitorio" },
+      { "value": "escritorio", "label": "Oficina" },
+      { "value": "planejados", "label": "Muebles a Medida" },
+      { "value": "outro", "label": "Otro" }
+    ],
+    "submitButton": "Solicitar Presupuesto Gratuito",
+    "alertRequired": "⚠️ Por favor, complete todos los campos obligatorios antes de enviar.",
+    "alertPreview": "📋 Vista previa del mensaje que se enviaría por WhatsApp:",
+    "msgGreeting": "¡Hola! Me gustaría solicitar un presupuesto:",
+    "msgNome": "Nombre",
+    "msgTelefone": "Teléfono",
+    "msgEmail": "Correo Electrónico",
+    "msgTipoMovel": "Tipos de Muebles",
+    "msgQuantidade": "Cantidad",
+    "msgDataPreferida": "Fecha Preferida",
+    "msgEndereco": "Dirección",
+    "msgDetalhes": "Detalles",
+    "msgNaoInformado": "No informado",
+    "msgNaoInformada": "No informada"
+  },
+  "cta": {
+    "title": "¿Listo para Montar sus Muebles?",
+    "subtitle": "¡Contáctenos ahora y obtenga un presupuesto sin compromiso!",
+    "ctaPrimary": "Solicite su Presupuesto Ahora",
+    "whatsappAlert": "📱 Este botón enviará un mensaje de WhatsApp al número de la empresa."
+  },
+  "footer": {
+    "desc": "Servicio profesional de montaje de muebles. Calidad, puntualidad y cuidado de su propiedad.",
+    "contato": "Contacto",
+    "horario": "Horario de Atención",
+    "emailAlert": "📧 Este enlace enviará un correo electrónico a la empresa.",
+    "whatsappAlert": "📱 Este enlace enviará un mensaje de WhatsApp al número de la empresa.",
+    "instagramAlert": "📸 Este enlace abrirá el Instagram de la empresa.",
+    "weekdays": "Lunes a Viernes: 08h - 18h",
+    "saturday": "Sábado: 08h - 13h",
+    "copyright": "MontaMóveis Pro. Todos los derechos reservados."
+  }
+}

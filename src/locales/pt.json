@@ -1,0 +1,105 @@
+{
+  "header": {
+    "servicos": "Serviços",
+    "comoFunciona": "Como Funciona",
+    "galeria": "Galeria",
+    "orcamento": "Orçamento",
+    "ctaButton": "Solicitar Orçamento",
+    "menuLabel": "Abrir menu"
+  },
+  "hero": {
+    "titleLine1": "Montagem de Móveis",
+    "titleLine2": "Profissional",
+    "subtitle": "Especialistas em montagem rápida e segura. Deixe seus móveis prontos para uso!",
+    "ctaPrimary": "Faça Seu Orçamento",
+    "ctaSecondary": "Solicitar Visita",
+    "heroAlt": "Sala com móveis montados"
+  },
+  "services": {
+    "sectionTitle": "Nossos Serviços",
+    "sectionSubtitle": "Montamos todos os tipos de móveis com qualidade e segurança",
+    "items": [
+      { "title": "Móveis de Sala", "description": "Sofás, estantes, racks e mesas de centro" },
+      { "title": "Móveis de Quarto", "description": "Camas, guarda-roupas, cômodas e criados-mudos" },
+      { "title": "Móveis de Escritório", "description": "Mesas, cadeiras, armários e estações de trabalho" },
+      { "title": "Móveis Planejados", "description": "Instalação completa de projetos planejados" },
+      { "title": "Manutenção", "description": "Ajustes, reparos e reforços em móveis" },
+      { "title": "Atendimento Rápido", "description": "Agendamento flexível e pontualidade garantida" }
+    ]
+  },
+  "howItWorks": {
+    "sectionTitle": "Como Funciona",
+    "sectionSubtitle": "Processo simples e transparente",
+    "steps": [
+      { "title": "Entre em Contato", "description": "Preencha o formulário com os detalhes da montagem" },
+      { "title": "Agende a Visita", "description": "Escolha o melhor dia e horário para você" },
+      { "title": "Montagem Profissional", "description": "Nossa equipe monta seus móveis com cuidado" },
+      { "title": "Aproveite!", "description": "Seus móveis prontos para uso imediato" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Nossos Trabalhos",
+    "sectionSubtitle": "Confira alguns dos nossos serviços realizados",
+    "images": [
+      "Montagem com furadeira profissional",
+      "Montagem de móvel com chave de fenda",
+      "Guarda-roupa finalizado"
+    ]
+  },
+  "quoteForm": {
+    "sectionTitle": "Faça Seu Orçamento",
+    "sectionSubtitle": "Preencha os dados abaixo e receba um orçamento personalizado",
+    "labelNome": "Nome Completo *",
+    "labelTelefone": "Telefone/WhatsApp *",
+    "labelEmail": "E-mail",
+    "labelTipoMovel": "Tipo de Móvel *",
+    "labelQuantidade": "Quantidade de Peças *",
+    "labelData": "Data Preferida",
+    "labelEndereco": "Endereço Completo *",
+    "labelDetalhes": "Detalhes Adicionais *",
+    "placeholderNome": "Seu nome completo",
+    "placeholderTelefone": "(11) 99999-9999",
+    "placeholderEmail": "seu@email.com",
+    "placeholderQuantidade": "Ex: 3",
+    "placeholderEndereco": "Rua, número, bairro, cidade",
+    "placeholderDetalhes": "Descreva os móveis que precisam ser montados (marca, modelo, observações especiais...)",
+    "tipos": [
+      { "value": "sala", "label": "Móveis de Sala" },
+      { "value": "quarto", "label": "Móveis de Quarto" },
+      { "value": "escritorio", "label": "Móveis de Escritório" },
+      { "value": "planejados", "label": "Móveis Planejados" },
+      { "value": "outro", "label": "Outro" }
+    ],
+    "submitButton": "Solicitar Orçamento Gratuito",
+    "alertRequired": "⚠️ Por favor, preencha todos os campos obrigatórios antes de enviar.",
+    "alertPreview": "📋 Prévia da mensagem que seria enviada via WhatsApp:",
+    "msgGreeting": "Olá! Gostaria de solicitar um orçamento:",
+    "msgNome": "Nome",
+    "msgTelefone": "Telefone",
+    "msgEmail": "E-mail",
+    "msgTipoMovel": "Tipos de Móvel",
+    "msgQuantidade": "Quantidade",
+    "msgDataPreferida": "Data Preferida",
+    "msgEndereco": "Endereço",
+    "msgDetalhes": "Detalhes",
+    "msgNaoInformado": "Não informado",
+    "msgNaoInformada": "Não informada"
+  },
+  "cta": {
+    "title": "Pronto para Montar Seus Móveis?",
+    "subtitle": "Entre em contato agora e receba um orçamento sem compromisso!",
+    "ctaPrimary": "Faça Seu Orçamento Agora",
+    "whatsappAlert": "📱 Este botão irá enviar uma mensagem via WhatsApp para o número da empresa."
+  },
+  "footer": {
+    "desc": "Serviço profissional de montagem de móveis. Qualidade, pontualidade e cuidado com seu patrimônio.",
+    "contato": "Contato",
+    "horario": "Horário de Atendimento",
+    "emailAlert": "📧 Este link irá enviar um e-mail para o email da empresa.",
+    "whatsappAlert": "📱 Este link irá enviar uma mensagem via WhatsApp para o número da empresa.",
+    "instagramAlert": "📸 Este link irá abrir o Instagram da empresa.",
+    "weekdays": "Segunda a Sexta: 08h - 18h",
+    "saturday": "Sábado: 08h - 13h",
+    "copyright": "MontaMóveis Pro. Todos os direitos reservados."
+  }
+}

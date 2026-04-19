@@ -1,29 +1,32 @@
 import { HiArrowRight } from 'react-icons/hi';
+import { useLanguage } from '../../context/LanguageContext';
 import heroBg from '../../assets/images/hero-bg.png';
 import './Hero.scss';
 
 function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="hero" id="inicio">
       <div className="hero__bg">
-        <img src={heroBg} alt="Sala com móveis montados" />
+        <img src={heroBg} alt={t('hero.heroAlt')} />
         <div className="hero__overlay" />
       </div>
 
       <div className="container hero__content">
         <h1 className="hero__title">
-          Montagem de Móveis<br />Profissional
+          {t('hero.titleLine1')}<br />{t('hero.titleLine2')}
         </h1>
         <p className="hero__subtitle">
-          Especialistas em montagem rápida e segura. Deixe seus móveis prontos para uso!
+          {t('hero.subtitle')}
         </p>
         <div className="hero__buttons">
           <a href="#orcamento" className="hero__btn hero__btn--primary" id="hero-cta-orcamento">
-            Faça Seu Orçamento
+            {t('hero.ctaPrimary')}
             <HiArrowRight />
           </a>
           <a href="#orcamento" className="hero__btn hero__btn--outline" id="hero-cta-visita">
-            Solicitar Visita
+            {t('hero.ctaSecondary')}
           </a>
         </div>
       </div>

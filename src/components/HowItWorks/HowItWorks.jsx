@@ -1,45 +1,29 @@
 import { MdOutlineChatBubbleOutline, MdOutlineCalendarMonth, MdOutlineBuild, MdOutlineCheckCircleOutline } from 'react-icons/md';
+import { useLanguage } from '../../context/LanguageContext';
 import './HowItWorks.scss';
 
-const steps = [
-  {
-    icon: <MdOutlineChatBubbleOutline />,
-    number: '1',
-    title: 'Entre em Contato',
-    description: 'Preencha o formulário com os detalhes da montagem',
-  },
-  {
-    icon: <MdOutlineCalendarMonth />,
-    number: '2',
-    title: 'Agende a Visita',
-    description: 'Escolha o melhor dia e horário para você',
-  },
-  {
-    icon: <MdOutlineBuild />,
-    number: '3',
-    title: 'Montagem Profissional',
-    description: 'Nossa equipe monta seus móveis com cuidado',
-  },
-  {
-    icon: <MdOutlineCheckCircleOutline />,
-    number: '4',
-    title: 'Aproveite!',
-    description: 'Seus móveis prontos para uso imediato',
-  },
+const icons = [
+  <MdOutlineChatBubbleOutline key="chat" />,
+  <MdOutlineCalendarMonth key="calendar" />,
+  <MdOutlineBuild key="build" />,
+  <MdOutlineCheckCircleOutline key="check" />
 ];
 
 function HowItWorks() {
+  const { t } = useLanguage();
+  const steps = t('howItWorks.steps') || [];
+
   return (
     <section className="how-it-works section" id="como-funciona">
       <div className="container">
-        <h2 className="section-title" style={{ fontStyle: 'italic' }}>Como Funciona</h2>
-        <p className="section-subtitle">Processo simples e transparente</p>
+        <h2 className="section-title" style={{ fontStyle: 'italic' }}>{t('howItWorks.sectionTitle')}</h2>
+        <p className="section-subtitle">{t('howItWorks.sectionSubtitle')}</p>
         <div className="how-it-works__steps">
-          {steps.map((step, index) => (
+          {Array.isArray(steps) && steps.map((step, index) => (
             <div className="how-it-works__step" key={index}>
-              <div className="how-it-works__icon">{step.icon}</div>
+              <div className="how-it-works__icon">{icons[index]}</div>
               <h3 className="how-it-works__title">
-                {step.number}. {step.title}
+                {index + 1}. {step.title}
               </h3>
               <p className="how-it-works__desc">{step.description}</p>
             </div>

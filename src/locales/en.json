@@ -1,0 +1,105 @@
+{
+  "header": {
+    "servicos": "Services",
+    "comoFunciona": "How it Works",
+    "galeria": "Gallery",
+    "orcamento": "Quote",
+    "ctaButton": "Request Quote",
+    "menuLabel": "Open menu"
+  },
+  "hero": {
+    "titleLine1": "Professional",
+    "titleLine2": "Furniture Assembly",
+    "subtitle": "Experts in fast and safe assembly. Get your furniture ready to use!",
+    "ctaPrimary": "Get Your Quote",
+    "ctaSecondary": "Request a Visit",
+    "heroAlt": "Living room with assembled furniture"
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "sectionSubtitle": "We assemble all types of furniture with quality and safety",
+    "items": [
+      { "title": "Living Room", "description": "Sofas, bookcases, TV stands and coffee tables" },
+      { "title": "Bedroom", "description": "Beds, wardrobes, dressers and nightstands" },
+      { "title": "Office", "description": "Desks, chairs, cabinets and workstations" },
+      { "title": "Custom Furniture", "description": "Complete installation of custom projects" },
+      { "title": "Maintenance", "description": "Adjustments, repairs and reinforcements" },
+      { "title": "Fast Service", "description": "Flexible scheduling and guaranteed punctuality" }
+    ]
+  },
+  "howItWorks": {
+    "sectionTitle": "How it Works",
+    "sectionSubtitle": "Simple and transparent process",
+    "steps": [
+      { "title": "Contact Us", "description": "Fill out the form with assembly details" },
+      { "title": "Schedule Visit", "description": "Choose the best day and time for you" },
+      { "title": "Professional Assembly", "description": "Our team assembles your furniture with care" },
+      { "title": "Enjoy!", "description": "Your furniture ready for immediate use" }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Our Work",
+    "sectionSubtitle": "Check out some of our completed services",
+    "images": [
+      "Assembly with professional drill",
+      "Furniture assembly with screwdriver",
+      "Finished wardrobe"
+    ]
+  },
+  "quoteForm": {
+    "sectionTitle": "Get Your Quote",
+    "sectionSubtitle": "Fill in your details below to receive a personalized quote",
+    "labelNome": "Full Name *",
+    "labelTelefone": "Phone/WhatsApp *",
+    "labelEmail": "Email",
+    "labelTipoMovel": "Furniture Type *",
+    "labelQuantidade": "Number of Items *",
+    "labelData": "Preferred Date",
+    "labelEndereco": "Full Address *",
+    "labelDetalhes": "Additional Details *",
+    "placeholderNome": "Your full name",
+    "placeholderTelefone": "(11) 99999-9999",
+    "placeholderEmail": "your@email.com",
+    "placeholderQuantidade": "Ex: 3",
+    "placeholderEndereco": "Street, number, neighborhood, city",
+    "placeholderDetalhes": "Describe the furniture that needs assembly (brand, model, special notes...)",
+    "tipos": [
+      { "value": "sala", "label": "Living Room" },
+      { "value": "quarto", "label": "Bedroom" },
+      { "value": "escritorio", "label": "Office" },
+      { "value": "planejados", "label": "Custom Furniture" },
+      { "value": "outro", "label": "Other" }
+    ],
+    "submitButton": "Request Free Quote",
+    "alertRequired": "⚠️ Please fill in all required fields before submitting.",
+    "alertPreview": "📋 Preview of the message that would be sent via WhatsApp:",
+    "msgGreeting": "Hello! I would like to request a quote:",
+    "msgNome": "Name",
+    "msgTelefone": "Phone",
+    "msgEmail": "Email",
+    "msgTipoMovel": "Furniture Types",
+    "msgQuantidade": "Quantity",
+    "msgDataPreferida": "Preferred Date",
+    "msgEndereco": "Address",
+    "msgDetalhes": "Details",
+    "msgNaoInformado": "Not provided",
+    "msgNaoInformada": "Not provided"
+  },
+  "cta": {
+    "title": "Ready to Assemble Your Furniture?",
+    "subtitle": "Contact us now and get a free, no-obligation quote!",
+    "ctaPrimary": "Get Your Quote Now",
+    "whatsappAlert": "📱 This button will send a WhatsApp message to the company's number."
+  },
+  "footer": {
+    "desc": "Professional furniture assembly service. Quality, punctuality, and care for your property.",
+    "contato": "Contact",
+    "horario": "Business Hours",
+    "emailAlert": "📧 This link will send an email to the company.",
+    "whatsappAlert": "📱 This link will send a WhatsApp message to the company's number.",
+    "instagramAlert": "📸 This link will open the company's Instagram.",
+    "weekdays": "Monday to Friday: 8am - 6pm",
+    "saturday": "Saturday: 8am - 1pm",
+    "copyright": "MontaMóveis Pro. All rights reserved."
+  }
+}
